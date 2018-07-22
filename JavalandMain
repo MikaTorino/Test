@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class JavalandMain {
+	public static void main(String[] args){
+		//入力値の格納先
+		ArrayList<String> inputKeys = new ArrayList<>();
+		//計算値の格納先
+		ArrayList<StringBuilder> calcArray = new ArrayList<>();
+		
+		//入力値をScannerで受け取る
+		System.out.println("足し算するジャバーランドの値を半角スペース区切りで入力して下さい");
+		Scanner sc = new Scanner(System.in);
+		try {
+			//入力値を確認用のコレクションに格納
+			while (sc.hasNext()) {
+				inputKeys.add(sc.next());
+			}
+			/* JavalandRuleクラスのcheckRuleメソッドで入力値２つがそれぞれ規定範囲内か否かを確認
+			   StringBuilderに変換してcalcArrayに格納 */
+			for(String key : inputKeys) {
+				int numOfChar = s.length();
+				JavalandRule javalandRule = new JavalandRule();
+				calcArray.add(append(checkRule(key, numOfChar)));
+				//コンソールに3つ目以降の入力値があった場合、JavalandRuleの確認対象、計算対象に含めない
+				if (calcArray.size() > 2) {
+					break;
+				}
+			}
+			//5進数に変換し足し算する
+			Quinary quinary = new Quinary();
+			StringBuilder ansSb = quinary.addQuinary(calcArray);
+			//結果をStringに変換してコンソールに出力
+			System.out.println(ansSb.toString());
+		} catch (MyException_OutOfRange e){
+			e.printStackTrace();
+		} finally {
+			sc.close();
+		}
+	}
+}
