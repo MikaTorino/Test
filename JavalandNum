@@ -1,0 +1,20 @@
+public enum JavalandNum {
+	A(0),
+	B(1),
+	C(2),
+	D(3),
+	E(4);
+
+	//フィールドの定義
+	private int num;
+
+	//コンストラクタの定義
+	private JavalandNum(int num){
+		this.num = num;
+	}
+	
+	//num用のgetter
+	public void getJavalandNum() {
+		return num;
+	}
+}
