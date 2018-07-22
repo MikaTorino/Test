@@ -1,0 +1,35 @@
+public class Quinary {
+	ArrayList<Integer> quinaryArray = new ArrayList<>();
+	
+	//ジャバーランド語を5進数に変換する
+	public ArrayList convertQuinary(ArrayList calcArray) {
+		for (StringBuilder s : calcArray) {
+			StringBuilder q = null;
+			int numOfChars = s.length();
+			for (int i = 0; i < numOfChars; i++) {
+				//文字列をEnumに変換し5進数を読み込む
+				JavalandNum enumNum = JavalandNum.valueOf(s.charAt(i));
+				quinaryArray.add(enumNum.getJavalandNum()));
+			}
+		}
+		return quinaryArray;
+	}
+	
+	//変換した5進数をStringBuilderに入れる
+	//for文で同じindex同士を計算、桁上がりが発生した場合のカウントを用意して桁上がりを実施
+	//concatで左から入っているので計算後はリバース
+	
+	//5進数の足し算
+	public StringBuilder addQuinary(ArrayList calcArray) {
+		//convertQuinaryメソッドで英字を5進数に変換
+		Quinary quinary = new Quinary();
+		quinary.convertQuinary(calcArray);
+		for (int s : quinaryArray) {
+			int numOfChars = s.length();
+			for (int i = 0; i < numOfChars; i++) {
+				
+			}
+		}
+		return quinaryValue;
+	}
+}
